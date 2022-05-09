@@ -1,0 +1,110 @@
+@import "variables-orpea";
+@import "fonts-orpea";
+@import "mixin-orpea";
+
+/*=====================================================================
+==========================   main-css-all-pages  =========================
+========================================================================*/
+
+body {
+  margin: 0;
+  padding: 0;
+  @include full-width;
+  @include montserrat(regular400);
+}
+
+//custom-container-fluid
+.container-fluid{
+  @include mq(min, 1375){
+    width: 1390px;
+  }
+}
+
+
+a, a:hover, a:active, a:focus, a:link, a:visited {
+  text-decoration: none;
+  @include transition(.5s);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a, p, h1, h2, h3, h4, h5, h6, li, ul {
+  margin: 0;
+  padding: 0;
+  transition: .5s;
+}
+
+//flex-item
+.flex-item {
+  @include mq(min, 767) {
+    display: flex;
+    align-items: center;
+  }
+}
+//flex-item-all
+.flex-item-all {
+  display: flex;
+  align-items: center;
+}
+
+//flex-custom
+.flex-custom{
+  @include mq(min, 992) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.vertical-block {
+  @include full-width;
+  display: table;
+  height: 100%;
+
+  .cell {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+.mb30{
+  margin-bottom: 30px;
+}
+/*=====================================================================
+==========================   font-face  =========================
+========================================================================*/
+
+
+//delete text
+del {
+  position: relative;
+  text-decoration: none;
+
+  &:after{
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    height: 2px;
+    width: calc(100% + 20px);
+    content: '';
+    background: $darkred;
+    transform: translateY(-50%);
+  }
+}
+
+@include scrollbars(8, $yellow, $black);
+@include mq(max, 767){
+  @include scrollbars(4, $yellow, $black);
+}
+
+//main-scss
+@import "header-footer-orpea";
+@import "home-orpea";
+@import "mega-menu-orpea";
+@import "responsive-orpea";
+@import "new-header-orpea";
+
+
